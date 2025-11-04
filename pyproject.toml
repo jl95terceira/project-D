@@ -3,7 +3,7 @@ requires = ["hatchling", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
 [project]
 name = "jl95terceira_pytools_env"
-version = "0.2.7"
+version = "0.2.8"
 authors = [
   { name="Joao Luis Ornelas da Silva", email="jl95terceira@gmail.com" },
 ]
@@ -30,3 +30,16 @@ packages = ["project/package","project/package_DEPRECATED"]
 
 [tool.hatch.metadata.hooks.requirements_txt]
 files = ["requirements.txt"]
+
+[project.scripts]
+#PPTOML:BEGIN
+#import os
+#import project
+#for x in ('jl95','jl95terceira'):
+#  for file_name in filter(lambda file_name: file_name.endswith('.py'), os.listdir(os.path.join(project.PATH, 'project', 'package',))):
+#    app_name = os.path.splitext(file_name)[0]
+#    writeline(f'"{x}-pytools/{app_name}"="{x}.pytools.{app_name}:main"')
+#PPTOML:END
+"jl95-pytools/env"="jl95.pytools.env:main"
+"jl95terceira-pytools/env"="jl95terceira.pytools.env:main"
+#PPTOML:TAIL

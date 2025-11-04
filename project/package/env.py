@@ -8,7 +8,7 @@ from jl95.pytools.envlib import (
 )
 import jl95.pytools.envlib.vars.builtin as builtin_vars
 
-if __name__ == '__main__':
+def main():
 
     class P:
 
@@ -74,3 +74,5 @@ if __name__ == '__main__':
         exit(0)
     
     get('_F')(args)
+
+if __name__ == '__main__': main()
