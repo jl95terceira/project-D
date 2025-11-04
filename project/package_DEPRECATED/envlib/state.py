@@ -1,7 +1,7 @@
 import pickle
 import typing
 
-from jl95.batteries import *
+from jl95terceira.batteries import *
 
 # If this class is not separated from env.py, problems arise with pickling.
 

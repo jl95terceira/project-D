@@ -3,10 +3,10 @@ import typing
 
 from .. import var
 
-from jl95terceira.batteries import os
+from jl95.batteries import os
 
 class EditorTypeNotValid(Exception): pass
-def _editor(o) -> typing.Callable[[str],str]:
+def _editor(o:str|typing.Callable[[str],str]) -> typing.Callable[[str],str]:
 
     if isinstance(o, str): return _editor(lambda file_path: f'{o} {file_path}')
     if callable  (o): 
@@ -18,6 +18,8 @@ def _editor(o) -> typing.Callable[[str],str]:
 
         except: raise EditorTypeNotValid(o)
         return o
+    
+    raise EditorTypeNotValid(o)
 
 EDITOR           = var(name       ='editor',
                        description='default text file editor',

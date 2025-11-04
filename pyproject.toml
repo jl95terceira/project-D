@@ -3,7 +3,7 @@ requires = ["hatchling", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
 [project]
 name = "jl95terceira_pytools_env"
-version = "0.2.6"
+version = "0.2.7"
 authors = [
   { name="Joao Luis Ornelas da Silva", email="jl95terceira@gmail.com" },
 ]
@@ -22,10 +22,11 @@ Homepage = "https://github.com/jl95terceira/project-env"
 Issues = "https://github.com/jl95terceira/project-env/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["project/package"]
+packages = ["project/package","project/package_DEPRECATED"]
 
 [tool.hatch.build.targets.wheel.sources]
-"project/package" = "jl95terceira/pytools"
+"project/package" = "jl95/pytools"
+"project/package_DEPRECATED" = "jl95terceira/pytools"
 
 [tool.hatch.metadata.hooks.requirements_txt]
 files = ["requirements.txt"]

@@ -2,11 +2,11 @@ import argparse
 import builtins
 import os
 
-from jl95.pytools import envlib
-from jl95.pytools.envlib import (
+import envlib
+from envlib import (
     _Global,
 )
-import jl95.pytools.envlib.vars.builtin as builtin_vars
+import envlib.vars.builtin
 
 if __name__ == '__main__':
 
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
     def default_open(args): 
         
-        os.system(builtin_vars.EDITOR.get()(envlib.VARS_FILEPATH))
+        os.system(envlib.vars.builtin.EDITOR.get()(envlib.VARS_FILEPATH))
 
     p = argparse.ArgumentParser       (formatter_class=argparse.RawTextHelpFormatter,
                                        description    =DESCRIPTION)
